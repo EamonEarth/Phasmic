@@ -100,7 +100,7 @@ const Header = ({ className }: HeaderProps) => {
       id="Home"
       className={cn("w-full max-w-[100%] border-black bg-black", className)}
     >
-      <div className="flex flex-col h-[300px] lg:h-[550px] overflow-hidden items-center justify-center text-white">
+      <div className="flex flex-col h-[300px] lg:h-[550px] items-center justify-center text-white">
         <p
           style={textStyle}
           className=" font-bold items-center justify-center  flex gap-x-2 "

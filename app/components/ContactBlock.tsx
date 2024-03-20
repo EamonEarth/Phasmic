@@ -102,6 +102,7 @@ const ContactBlock = ({ className }: ContactBlockProps) => {
             transition:
               "max-height 0.5s ease-in-out,  opacity 0.2s ease-in-out",
             opacity: formOpacity,
+            width: "100%",
           }}
         >
           <ContactForm

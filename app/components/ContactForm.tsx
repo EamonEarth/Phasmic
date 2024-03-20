@@ -84,9 +84,10 @@ const ContactForm = React.forwardRef<HTMLDivElement, ContactFormProps>(
       <div ref={ref} className={cn("w-full  h-auto", inter.className)}>
         <div className="flex flex-col rounded">
           <form
-            onSubmit={handleSubmit}
+            onSubmit={handleClear}
+            // onSubmit={handleSubmit}
             autoComplete="off"
-            className="grid gap-2 text-white text-sm w-[480px] lg:w-[700px] relative bg-black/85 p-6 rounded-se-[150px] rounded-es-[100px] "
+            className="grid gap-2 text-white text-sm  relative bg-black/85 p-6 rounded-se-[150px] rounded-es-[100px] "
           >
             <X
               className="cursor-pointer absolute top-[50px] right-[50px] text-white"
