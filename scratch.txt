@@ -1,0 +1,4 @@
+.txt
+
+nav indicator is a class which, when paired with '.active', applies a width larger than the original. 
+style transition width and the effect is good
