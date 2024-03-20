@@ -144,7 +144,7 @@ const ServicesBlock = ({ className }: ServicesBlockProps) => {
     <div className="w-full h-full flex flex-col items-center bg-white md:pl-4 pr-0 rounded-t-xl">
       <div
         className={cn(
-          " md:hidden uppercase tracking-wider font-bold text-center py-3 my-4 h-full w-[50%] border-gray-400 border-dashed  border  flex  items-center justify-center",
+          " md:hidden uppercase tracking-wider text-sm font-bold text-center py-3 my-4 h-full w-[50%] border-gray-400 border-dashed  border  flex  items-center justify-center",
           ubuntu.className
         )}
       >
@@ -176,7 +176,7 @@ const ServicesBlock = ({ className }: ServicesBlockProps) => {
         </p>
         <div
           className={cn(
-            "col-span-10 md:col-span-8 text-left md:py-8 pb-8 text-xs md:text-sm tracking-wide flex flex-col gap-y-4 relative",
+            "col-span-10 md:col-span-8 text-left md:py-8 pb-12 text-xs md:text-sm tracking-wide flex flex-col gap-y-4 relative",
             bungeeHairline.className
           )}
         >
