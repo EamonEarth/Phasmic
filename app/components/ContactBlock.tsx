@@ -67,7 +67,7 @@ const ContactBlock = ({ className }: ContactBlockProps) => {
     >
       <div
         className={cn(
-          "col-span-2 text-center font-bold uppercase tracking-widest h-full border md:border-0 md:border-b-0 md:border-r border-gray-400 border-dashed  w-[50%] md:w-auto  p-2 flex items-center justify-center"
+          "col-span-2 text-sm md:text-base text-center font-bold uppercase tracking-widest h-full border md:border-0 md:border-b-0 md:border-r border-gray-400 border-dashed  w-[50%] md:w-auto  p-2 flex items-center justify-center"
         )}
       >
         Contact
