@@ -66,7 +66,7 @@ const ScrollingTicker = ({
 
       <ServicesTooltip
         ulClassNames=""
-        textClassNames="text-sm  justify-between flex"
+        textClassNames="text-xs md:text-sm  justify-between flex"
         services={content}
         expandTooltip={showTooltip === title}
         searchInput={searchInput}

@@ -37,7 +37,7 @@ const ServicesTooltip = ({
           ulClassNames
         )}
       >
-        <div className="flex flex-col">
+        <div className="flex flex-col ">
           {services
             .filter((_, index) => index % 2 === 0)
             .map((service) => (
@@ -56,7 +56,7 @@ const ServicesTooltip = ({
               </li>
             ))}
         </div>
-        <div className="flex flex-col ">
+        <div className="flex flex-col  ">
           {services
             .filter((_, index) => index % 2 === 1)
             .map((service) => (
