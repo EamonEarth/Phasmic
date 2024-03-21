@@ -37,11 +37,9 @@ const soundContent = [
   "•",
   "DJs",
   "•",
-  "Session Musicians",
+  "Players",
   "•",
-  "Mixing",
-  "•",
-  "Mastering",
+  "Mix & Master",
   "•",
   "Engineering",
   "•",
@@ -88,7 +86,7 @@ const contentArray = [
   },
   {
     title: "Film & Photography",
-    scrollSpeed: "scrolling-content-slow",
+    scrollSpeed: "scrolling-content",
     content: visualsContent.filter((item, index) => index % 2 === 0),
     icon: Clapperboard,
   },
@@ -114,9 +112,9 @@ const ServicesBlock = ({ className }: ServicesBlockProps) => {
   const [showTooltip, setShowTooltip] = useState("");
   const [expandTooltip, setExpandTooltip] = useState(false);
   const [searchInput, setSearchInput] = useState("");
-  const [highlightedCategories, setHighlightedCategories] = useState([
-    0, 0, 0, 0,
-  ]);
+  const [highlightedCategories, setHighlightedCategories] = useState(
+    Array(contentArray.length).fill(0)
+  );
   const [showSearch, setShowSearch] = useState(false);
 
   useEffect(() => {
@@ -141,7 +139,14 @@ const ServicesBlock = ({ className }: ServicesBlockProps) => {
     }
   };
   return (
-    <div className="w-full h-full flex flex-col items-center bg-white md:pl-4 pr-0 rounded-t-xl">
+    <div
+      onMouseLeave={() => {
+        timeoutRef.current = setTimeout(() => {
+          setShowTooltip("");
+        }, 200);
+      }}
+      className="w-full h-full flex flex-col items-center bg-white md:pl-4 pr-0 rounded-t-xl"
+    >
       <div
         className={cn(
           " md:hidden uppercase tracking-wider text-sm font-bold text-center py-3 my-4 h-full w-[50%] border-gray-400 border-dashed  border  flex  items-center justify-center",
@@ -186,12 +191,7 @@ const ServicesBlock = ({ className }: ServicesBlockProps) => {
               className={cn(showTooltip == content.title && "py-2")}
               onMouseOver={() => {
                 clearTooltipTimeout();
-                setTimeout(() => setShowTooltip(content.title), 200);
-              }}
-              onMouseLeave={() => {
-                timeoutRef.current = setTimeout(() => {
-                  setShowTooltip("");
-                }, 1000);
+                setTimeout(() => setShowTooltip(content.title), 300);
               }}
               key={content.title}
             >

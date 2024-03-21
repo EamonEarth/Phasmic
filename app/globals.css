@@ -30,11 +30,11 @@
 
 .scrolling-content {
   display: inline-flex;
-  animation: scroll-left 15s linear infinite;
+  animation: scroll-left 10s linear infinite;
 }
 .scrolling-content-slow {
   display: inline-flex;
-  animation: scroll-left 25s linear infinite;
+  animation: scroll-left 18s linear infinite;
 }
 
 @keyframes scroll-left {
@@ -42,12 +42,23 @@
     transform: translateX(0%);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(-60%);
   }
 }
 
+
+.has-search-match {
+  content: url('~lucide-static/icons/search-check.svg'); /* Adjust as necessary */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.has-search-match::after {
+  opacity: 1; /* Show the icon */
+}
+
 .ticker-item {
-  display: inline-block;
+  /* display: inline-block; */
   padding: 0 0.8rem; /* Adjust spacing between items */
 }
 

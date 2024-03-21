@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { LucideIcon } from "lucide-react";
+import { LucideIcon, Search, SearchCheck } from "lucide-react";
 import React, { SetStateAction, useRef, useState } from "react";
 import ServicesTooltip from "./ServicesTooltip";
 
@@ -29,6 +29,38 @@ const ScrollingTicker = ({
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
+  };
+
+  const highlightMatch = (contentTitle: string, searchInput: string) => {
+    if (!searchInput) return contentTitle; // Return original if no search input
+
+    const lowerCaseContent = contentTitle.toLowerCase();
+    const lowerCaseSearchInput = searchInput.toLowerCase();
+    const matchStart = lowerCaseContent.indexOf(lowerCaseSearchInput);
+    if (matchStart === -1) return contentTitle; // Return original if no match
+
+    const matchEnd = matchStart + searchInput.length;
+
+    // Splitting the title into three parts: before, match, after
+    const beforeMatch = contentTitle.substring(0, matchStart);
+    const matchText = contentTitle.substring(matchStart, matchEnd);
+    const afterMatch = contentTitle.substring(matchEnd);
+
+    // Return a combination of elements, highlighting the match
+    return (
+      <>
+        {beforeMatch}
+        <span
+          style={{
+            textDecoration: "underline",
+            transition: "underline 0.1s ease-in-out",
+          }}
+        >
+          {matchText}
+        </span>
+        {afterMatch}
+      </>
+    );
   };
 
   const handleCheck = () => {
@@ -72,7 +104,8 @@ const ScrollingTicker = ({
         searchInput={searchInput}
       />
 
-      <div className={cn(" ", scrollingContentType)}>
+      {/* <div className={cn(" ", scrollingContentType)}> */}
+      <div className={cn("scrolling-content ", scrollingContentType)}>
         {Array.from({ length: 2 }).flatMap((_, duplicationIndex) =>
           content.map((contentTitle, index) => (
             <div
@@ -84,11 +117,14 @@ const ScrollingTicker = ({
               }}
               key={`${duplicationIndex}-${index}`}
               className={cn(
-                "ticker-item bg-white",
-                showTooltip === title && "bg-blue-300"
+                "ticker-item- flex px-[0.8rem] items-center relative bg-white z-[-10]",
+                showTooltip === title && "bg-blue-300",
+                contentTitle
+                  .toLowerCase()
+                  .includes(searchInput.toLowerCase()) && "text-pink-300"
               )}
             >
-              {contentTitle}
+              {highlightMatch(contentTitle, searchInput)}
             </div>
           ))
         )}
@@ -98,3 +134,16 @@ const ScrollingTicker = ({
 };
 
 export default ScrollingTicker;
+
+// <div
+//   className={cn(
+//     "absolute -botttom-12 flex justify-around w-full h-[50%] opacity-30 z-[-5] bg-pink-500",
+//     contentTitle.length / 10 > 2 &&
+//       "!w-[50%] left-[30%] rounded-se-full"
+//   )}
+// >
+//   {/* <SearchCheck size="18" />
+//   <SearchCheck size="18" />
+//   <SearchCheck size="18" />
+//   <SearchCheck size="18" /> */}
+// </div>

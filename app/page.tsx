@@ -1,11 +1,10 @@
 import Header from "./components/Header";
-import AboutGrid from "./components/AboutGrid";
+// import AboutGrid from "./components/AboutGrid";
 import ClientsGrid from "./components/ClientsGrid";
 import ContactBlock from "./components/ContactBlock";
-import Services from "./components/Services";
-import Projects from "./components/Projects";
+// import Services from "./components/Services";
+// import Projects from "./components/Projects";
 import AboutLine from "./components/AboutLine";
-import ServicesTicker from "./components/ServicesBlock";
 import ServicesBlock from "./components/ServicesBlock";
 
 export default function Home() {
