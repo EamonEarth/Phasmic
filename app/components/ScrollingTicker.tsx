@@ -50,14 +50,7 @@ const ScrollingTicker = ({
     return (
       <>
         {beforeMatch}
-        <span
-          style={{
-            textDecoration: "underline",
-            transition: "underline 0.1s ease-in-out",
-          }}
-        >
-          {matchText}
-        </span>
+        <span style={{ textDecoration: "underline" }}>{matchText}</span>
         {afterMatch}
       </>
     );
@@ -74,7 +67,7 @@ const ScrollingTicker = ({
       className={cn(
         "scrolling-ticker border border-l-0 border-r-0 flex flex-col h-auto   w-full",
         showTooltip === title ? "max-h-[500px]" : "max-h-[60px]",
-        searchInput && !highlighted && "opacity-50"
+        searchInput && !highlighted && showTooltip !== title && "opacity-50"
       )}
     >
       <h2
@@ -104,9 +97,8 @@ const ScrollingTicker = ({
         searchInput={searchInput}
       />
 
-      {/* <div className={cn(" ", scrollingContentType)}> */}
-      <div className={cn("scrolling-content ", scrollingContentType)}>
-        {Array.from({ length: 2 }).flatMap((_, duplicationIndex) =>
+      <div className={cn(" ", scrollingContentType)}>
+        {Array.from({ length: 3 }).flatMap((_, duplicationIndex) =>
           content.map((contentTitle, index) => (
             <div
               style={{

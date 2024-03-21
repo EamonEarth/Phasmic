@@ -80,25 +80,25 @@ const allContentTitles: string[] = [
 const contentArray = [
   {
     title: "Writing & Admin",
-    scrollSpeed: "scrolling-content-slow",
+    scrollSpeed: "scrolling-content-admin",
     content: adminContent.filter((item, index) => index % 2 === 0),
     icon: Pencil,
   },
   {
     title: "Film & Photography",
-    scrollSpeed: "scrolling-content",
+    scrollSpeed: "scrolling-content-film",
     content: visualsContent.filter((item, index) => index % 2 === 0),
     icon: Clapperboard,
   },
   {
     title: "Music & Audio",
-    scrollSpeed: "scrolling-content",
+    scrollSpeed: "scrolling-content-music",
     content: soundContent.filter((item, index) => index % 2 === 0),
     icon: AudioWaveform,
   },
   {
     title: "Lighting & Visuals",
-    scrollSpeed: "scrolling-content",
+    scrollSpeed: "scrolling-content-lighting",
     content: filmContent.filter((item, index) => index % 2 === 0),
     icon: Projector,
   },

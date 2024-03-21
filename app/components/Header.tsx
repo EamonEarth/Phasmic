@@ -98,7 +98,10 @@ const Header = ({ className }: HeaderProps) => {
   return (
     <div
       id="Home"
-      className={cn("w-full max-w-[100%] border-black bg-black", className)}
+      className={cn(
+        "w-full max-w-[100%] min-h-[550px] border-black bg-black",
+        className
+      )}
     >
       <div className="flex flex-col h-[300px] lg:h-[550px] items-center justify-center text-white">
         <p
