@@ -286,7 +286,7 @@ const ServicesBlock = ({ className }: ServicesBlockProps) => {
                 >
                   {"   "}
                   {content.content.map((entry) => (
-                    <span className="px-2">
+                    <span className="px-2" key={entry}>
                       {highlightMatch(entry, searchInput)}
                     </span>
                   ))}

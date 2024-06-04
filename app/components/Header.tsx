@@ -103,7 +103,7 @@ const Header = ({ className }: HeaderProps) => {
         className
       )}
     >
-      <div className="flex flex-col w-full  items-center justify-center text-white bg-green-200 min-h-[305px]">
+      <div className="flex flex-col w-full  items-center justify-center text-white bg-green-200- min-h-[305px]">
         <p
           style={textStyle}
           className="font-bold items-center- justify-center flex gap-x-2 h-[300px] overflow-hidden"
@@ -112,7 +112,7 @@ const Header = ({ className }: HeaderProps) => {
             <span
               key={index}
               className={cn(
-                "letter flex items-center justify-center h-[300px] text-center lg:px-16 md:px-12 px-2 bg-orange-200",
+                "letter flex items-center justify-center h-[300px] text-center lg:px-16 md:px-12 px-2 bg-orange-200-",
                 className
               )}
             >
