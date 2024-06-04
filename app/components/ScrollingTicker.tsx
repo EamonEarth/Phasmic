@@ -45,6 +45,7 @@ const ScrollingTicker = ({
     const beforeMatch = contentTitle.substring(0, matchStart);
     const matchText = contentTitle.substring(matchStart, matchEnd);
     const afterMatch = contentTitle.substring(matchEnd);
+    console.count("highlighted");
 
     // Return a combination of elements, highlighting the match
     return (
@@ -63,11 +64,12 @@ const ScrollingTicker = ({
 
   return (
     <div
-      style={{ transition: "max-height 0.8s " }}
+      style={{ transition: "max-height 1.2s, opacity 0.5s  " }}
       className={cn(
         "scrolling-ticker border border-l-0 border-r-0 flex flex-col h-auto   w-full",
         showTooltip === title ? "max-h-[500px]" : "max-h-[60px]",
-        searchInput && !highlighted && showTooltip !== title && "opacity-50"
+        searchInput && !highlighted && showTooltip !== title && "opacity-50",
+        showTooltip && showTooltip !== title && "opacity-50"
       )}
     >
       <h2
@@ -80,9 +82,9 @@ const ScrollingTicker = ({
         }}
         className={cn(
           "tracking-widest text-start pl-4 flex gap-x-4 bg-white items-center w-full border border-l-0 text-[14px] md:text-[18px]",
-          showTooltip === title && "!bg-pink-300 !to-transparent",
+          // showTooltip === title && "!bg-green-800 !to-transparent",
           highlighted &&
-            "bg-gradient-to-l from-transparent  to-pink-300 from-35% glitch"
+            "bg-gradient-to-l from-transparent  to-green-800 from-35% glitch"
         )}
       >
         <Icon className="opacity-80" size="16" />
@@ -109,11 +111,8 @@ const ScrollingTicker = ({
               }}
               key={`${duplicationIndex}-${index}`}
               className={cn(
-                "ticker-item- flex px-[0.8rem] items-center relative bg-white z-[-10]",
-                showTooltip === title && "bg-blue-300",
-                contentTitle
-                  .toLowerCase()
-                  .includes(searchInput.toLowerCase()) && "text-pink-300"
+                "ticker-item- flex px-[0.8rem] items-center relative bg-white z-[-10]"
+                // showTooltip === title && "bg-blue-300"
               )}
             >
               {highlightMatch(contentTitle, searchInput)}

@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { ubuntu, bungeeHairline } from "../../lib/fonts";
 import { cn } from "@/lib/utils";
 import ScrollingTicker from "./ScrollingTicker";
+import { HorizontalTicker } from "react-infinite-ticker";
 import {
   AudioWaveform,
   Clapperboard,
@@ -12,6 +13,7 @@ import {
   SearchIcon,
 } from "lucide-react";
 import Search from "./Search";
+import ServicesTooltip from "./ServicesTooltip";
 
 const adminContent = [
   "Grant Applications",
@@ -43,6 +45,9 @@ const soundContent = [
   "•",
   "Engineering",
   "•",
+  "Composers",
+  "•",
+  "Producers",
 ];
 
 const visualsContent = [
@@ -56,6 +61,7 @@ const visualsContent = [
   "•",
   "Storyboarding",
   "•",
+  "Branding",
 ];
 
 const filmContent = [
@@ -79,25 +85,25 @@ const allContentTitles: string[] = [
 ].filter((_, i) => i % 2 == 0);
 const contentArray = [
   {
-    title: "Writing & Admin",
+    title: "Writing • Admin",
     scrollSpeed: "scrolling-content-admin",
     content: adminContent.filter((item, index) => index % 2 === 0),
     icon: Pencil,
   },
   {
-    title: "Film & Photography",
+    title: "Film • Photography",
     scrollSpeed: "scrolling-content-film",
     content: visualsContent.filter((item, index) => index % 2 === 0),
     icon: Clapperboard,
   },
   {
-    title: "Music & Audio",
+    title: "Music • Audio",
     scrollSpeed: "scrolling-content-music",
     content: soundContent.filter((item, index) => index % 2 === 0),
     icon: AudioWaveform,
   },
   {
-    title: "Lighting & Visuals",
+    title: "Lighting • Visuals",
     scrollSpeed: "scrolling-content-lighting",
     content: filmContent.filter((item, index) => index % 2 === 0),
     icon: Projector,
@@ -138,6 +144,35 @@ const ServicesBlock = ({ className }: ServicesBlockProps) => {
       clearTimeout(timeoutRef.current);
     }
   };
+
+  const highlightMatch = (contentTitle: string, searchInput: string) => {
+    if (!searchInput) return contentTitle; // Return original if no search input
+
+    const lowerCaseContent = contentTitle.toLowerCase();
+    const lowerCaseSearchInput = searchInput.toLowerCase();
+    const matchStart = lowerCaseContent.indexOf(lowerCaseSearchInput);
+    if (matchStart === -1) return contentTitle; // Return original if no match
+
+    const matchEnd = matchStart + searchInput.length;
+
+    // Splitting the title into three parts: before, match, after
+    const beforeMatch = contentTitle.substring(0, matchStart);
+    const matchText = contentTitle.substring(matchStart, matchEnd);
+    const afterMatch = contentTitle.substring(matchEnd);
+    console.count("highlighted");
+
+    // Return a combination of elements, highlighting the match
+    return (
+      <>
+        {beforeMatch}
+        <span className="bg-pink-200" style={{ textDecoration: "underline" }}>
+          {matchText}
+        </span>
+        {afterMatch}
+      </>
+    );
+  };
+
   return (
     <div
       onMouseLeave={() => {
@@ -145,8 +180,27 @@ const ServicesBlock = ({ className }: ServicesBlockProps) => {
           setShowTooltip("");
         }, 200);
       }}
-      className="w-full h-full flex flex-col items-center bg-white md:pl-4 pr-0 rounded-t-xl"
+      className="relative w-full h-full flex flex-col items-center bg-white md:pl-4 pr-0 rounded-t-xl"
     >
+      {/* BG IMG DIV */}
+      {/* <div
+        style={{
+          // backgroundImage: "url(/images/porthole.webp)",
+          // backgroundImage: "url(/images/oil1.webp)",
+          // backgroundImage: "url(/images/oil2.webp)",
+          // backgroundImage: "url(/images/oil3.webp)",
+          minHeight: "100%",
+          // width: "80%",
+          right: "0",
+          backgroundImage: "url(/images/oil4.webp)",
+          // backgroundSize: "cover",
+          // backgroundRepeat: "no-repeat",
+          backgroundRepeat: "repeat",
+          filter: "invert(0.9)",
+          transform: "perspective(10rem)",
+        }}
+        className="h-full w-full z-0 bg-red-500 absolute right-0 opacity-50"
+      /> */}
       <div
         className={cn(
           " md:hidden uppercase tracking-wider text-sm font-bold text-center py-3 my-4 h-full w-[50%] border-gray-400 border-dashed  border  flex  items-center justify-center",
@@ -181,17 +235,75 @@ const ServicesBlock = ({ className }: ServicesBlockProps) => {
         </p>
         <div
           className={cn(
-            "col-span-10 md:col-span-8 text-left md:py-8 pb-12 text-xs md:text-sm tracking-wide flex flex-col gap-y-4 relative",
+            "col-span-10 md:col-span-8 text-left md:py-8 pb-12 text-xs md:text-sm tracking-wide flex flex-col gap-y-6 relative",
             bungeeHairline.className
           )}
         >
           {contentArray.map((content, index) => (
             <span
               style={{ transition: "padding 0.8s" }}
-              className={cn(showTooltip == content.title && "py-2")}
+              className={cn(
+                "border-2 border-black border-l-0 border-r-0"
+                // showTooltip == content.title && "py-2"
+              )}
               onMouseOver={() => {
                 clearTooltipTimeout();
-                setTimeout(() => setShowTooltip(content.title), 300);
+                setTimeout(() => setShowTooltip(content.title), 500);
+              }}
+              key={content.title}
+            >
+              <h2
+                id={`${content.title} + ${index}`}
+                style={{
+                  WebkitTextStroke: "black 2px",
+                  lineHeight: "30px",
+                  wordSpacing: "8px",
+                  transition:
+                    "background-color 0.5s ease-in-out, background-image 0.5s ease-in-out",
+                }}
+                className={cn(
+                  "tracking-widest text-start pl-4 flex gap-x-4 bg-white items-center w-full border border-l-0 text-[14px] h-[30px] md:text-[18px] pseudo-gradient",
+                  highlightedCategories[index] === 1 && "highlighted"
+                  // "bg-gradient-to-r from-transparent  to-green-800 from-35% glitch"
+                )}
+              >
+                {/* <Icon className="opacity-80" size="16" /> */}
+                {content.title}
+              </h2>
+              <ServicesTooltip
+                ulClassNames=""
+                textClassNames="text-xs md:text-lg justify-between flex"
+                services={content.content}
+                expandTooltip={showTooltip === content.title}
+                searchInput={searchInput}
+              />
+              <HorizontalTicker
+                duration={8000 + content.content.join("").length * 90}
+              >
+                <p
+                  className="flex justify-around gap-x-4 whitespace-nowrap py-2 border-t"
+                  style={{ WebkitTextStroke: "1px black" }}
+                >
+                  {"   "}
+                  {content.content.map((entry) => (
+                    <span className="px-2">
+                      {highlightMatch(entry, searchInput)}
+                    </span>
+                  ))}
+                </p>
+              </HorizontalTicker>
+            </span>
+          ))}
+          {/* {contentArray.map((content, index) => (
+            <span
+              style={{ transition: "padding 0.8s" }}
+              className={cn(
+                "border-2 border-black border-l-0 border-r-0",
+                showTooltip == content.title && "py-2"
+              )}
+              onMouseOver={() => {
+                clearTooltipTimeout();
+                setTimeout(() => setShowTooltip(content.title), 500);
               }}
               key={content.title}
             >
@@ -206,7 +318,7 @@ const ServicesBlock = ({ className }: ServicesBlockProps) => {
                 searchInput={searchInput}
               />
             </span>
-          ))}
+          ))} */}
           <p
             style={{ WebkitTextStroke: "0.5px black" }}
             className=" absolute bottom-2 right-2 w-full text-end pr-4 pt-3"

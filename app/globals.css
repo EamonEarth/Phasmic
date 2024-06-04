@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+
+::placeholder {
+  font-weight: bold;
+  opacity: 0.5;
+  color: black;
+}  
+
+
 .letter {
   width: 40px; /* Adjust based on the widest character in your font set */
   text-align: center;
@@ -30,21 +38,42 @@
 
 .scrolling-content-admin {
   display: inline-flex;
-  animation: scroll-left-admin 21s linear infinite;
+  animation: scroll-left-admin 25s linear infinite;
 }
 .scrolling-content-film {
   display: inline-flex;
-  animation: scroll-left-film 12s linear infinite;
+  animation: scroll-left-film 15s linear infinite;
 }
 .scrolling-content-music {
   display: inline-flex;
-  animation: scroll-left-music 12s linear infinite;
+  animation: scroll-left-music 15s linear infinite;
 }
 .scrolling-content-lighting {
   display: inline-flex;
-  animation: scroll-left-lighting 18s linear infinite;
+  animation: scroll-left-lighting 21s linear infinite;
 }
 
+.pseudo-gradient {
+  position: relative;
+  overflow: hidden;
+}
+
+.pseudo-gradient::before {
+  content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 105%;
+      background: linear-gradient(to right, transparent, #fcd5ea);
+      transition: opacity 0.5s ease-in-out;
+      opacity: 0;
+
+}
+
+.pseudo-gradient.highlighted::before {
+  opacity: 1;
+}
 
 @keyframes scroll-left-admin {
   from {

@@ -18,6 +18,7 @@ const ContactBlock = ({ className }: ContactBlockProps) => {
   const [transOpacity, setTransOpacity] = useState(0);
   const [moveForm, setMoveForm] = useState(false);
   const [formOpacity, setFormOpacity] = useState(1);
+  const [quickContactOpacity, setQuickContactOpacity] = useState(1);
 
   const formRef = useRef<HTMLDivElement>(null); // Reference to the contact form
   const phoneRef = useRef<HTMLDivElement>(null); // Reference to the contact form
@@ -30,7 +31,7 @@ const ContactBlock = ({ className }: ContactBlockProps) => {
           behavior: "smooth",
           block: "center",
         });
-      }, 700);
+      }, 500);
     }
   }, [showContact]);
 
@@ -86,9 +87,14 @@ const ContactBlock = ({ className }: ContactBlockProps) => {
             onClick={() => {
               setShowContact(true);
               setFormOpacity(1);
+              setQuickContactOpacity(0);
             }}
-            className="flex items-center cursor-pointer py-3  text-sm"
-            style={{ WebkitTextStroke: "1px black" }}
+            className={cn("flex items-center cursor-pointer py-3 text-sm")}
+            style={{
+              WebkitTextStroke: "1px black",
+              transition: "opacity 1s ease-in-out",
+              opacity: quickContactOpacity,
+            }}
           >
             ø Quick contact <ArrowRight size="15" className="opacity-80" />
           </p>
@@ -111,6 +117,7 @@ const ContactBlock = ({ className }: ContactBlockProps) => {
             setFormOpacity={setFormOpacity}
             ref={formRef}
             setShowContact={setShowContact}
+            setQuickContactOpacity={setQuickContactOpacity}
           />
         </div>
       </div>

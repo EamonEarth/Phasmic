@@ -17,7 +17,7 @@ const Search = ({
     <div className="flex  items-center relative left-[30%]">
       <input
         autoFocus={true}
-        className="border rounded-xl pl-6 py-2 relative  max-w-[50%] text-pink-300 bg-black focus:outline-none"
+        className="border rounded-xl pl-2 py-1 relative  max-w-[50%] text-pink-300 bg-black focus:outline-none"
         placeholder="search"
         value={searchInput}
         onChange={(e) => {

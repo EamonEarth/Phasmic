@@ -6,7 +6,7 @@ const AboutLine = () => {
   return (
     <div
       className={cn(
-        "w-[80%] h-auto text-center text-white pb-12 -mt-12 text-sm md:text-lg font-semibold",
+        " z-50 w-[80%] h-auto text-center text-white pb-12 -mt-12 text-sm md:text-lg font-semibold",
         ubuntu.className
       )}
     >
