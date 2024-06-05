@@ -11,8 +11,10 @@ export default function Home() {
   return (
     <div className="w-full h-full min-h-screen max-w-screen bg-black flex  ">
       <div className="flex flex-col items-center bg-black">
-        <Header className="" />
-        <div className="flex flex-col items-center gap-y-4  w-[95%] md:w-[85%] lg:w-[75%] bg-black">
+        <span className="py-auto top-0 min-h-[300px] max-h-[300px]">
+          <Header className="" />
+        </span>
+        <div className="flex flex-col items-center gap-y-4 my-auto w-[95%] md:w-[85%] lg:w-[75%] bg-black">
           <AboutLine />
           <ServicesBlock className="" />
           {/* <AboutGrid className="md:py-8" /> */}

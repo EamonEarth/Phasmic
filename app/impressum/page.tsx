@@ -8,9 +8,9 @@ const page = () => {
       <div className="flex flex-col gap-y-16 justify-center items-center min-h-screen bg-black underline-offset-2">
         <div className="flex flex-col items-start  text-white bg-black gap-y-4">
           <p className="text-4xl">
-            Phasmic UG <span className="text-lg">(haftungsbeschränkt)</span>
+            Phasmic UG <span className="text-sm">(haftungsbeschränkt)</span>
           </p>
-          <p className="flex flex-col">
+          <p className="flex flex-col text-lg">
             Tristan Ashley{" "}
             <a
               className="underline text-purple-700"
@@ -19,7 +19,7 @@ const page = () => {
               tristan@phasmic.cc
             </a>
           </p>
-          <p>
+          <p className="text-sm">
             {" "}
             Kaiserin-Augusta-Allee 101 <p>HH Aufgang II</p>
           </p>
@@ -29,13 +29,13 @@ const page = () => {
           </p>
           <Link
             href="/"
-            className="pt-12 flex w-full justify-end hover:text-purple-400"
+            className="pt-6 flex w-full justify-start hover:text-purple-400"
           >
             <p
               style={{ transition: "transform 0.5s ease-in-out" }}
-              className="flex items-center gap-x-2 uppercase font-bold rounded-3xl border border-purple-500 px-6 py-2 text-purple-500  hover:scale-110"
+              className="flex items-center gap-x-2 uppercase font-bold rounded border border-purple-500 px-6 py-2 text-purple-500"
             >
-              Home <Home size="32" />
+              Home <Home size="18" />
             </p>
           </Link>
         </div>

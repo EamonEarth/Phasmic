@@ -205,7 +205,7 @@ const ServicesBlock = ({ className }: ServicesBlockProps) => {
           ubuntu.className
         )}
       >
-        Services
+        We can provide
       </div>
 
       <div className={cn("grid grid-cols-10 items-center ", className)}>
@@ -216,7 +216,7 @@ const ServicesBlock = ({ className }: ServicesBlockProps) => {
             ubuntu.className
           )}
         >
-          Services
+          We can provide
           {showSearch ? (
             <Search
               searchInput={searchInput}
@@ -294,7 +294,7 @@ const ServicesBlock = ({ className }: ServicesBlockProps) => {
 
           <p
             style={{ WebkitTextStroke: "0.5px black" }}
-            className=" absolute bottom-2 right-2 w-full text-end pr-4 pt-3"
+            className=" absolute top-0 right-1 w-full text-end pr-4 pt-3"
           >
             Tell us your needs and we&apos;ll find the right team for you!
           </p>
