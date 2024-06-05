@@ -14,10 +14,10 @@ const Search = ({
   setShowSearch,
 }: SearchProps) => {
   return (
-    <div className="flex  items-center relative left-[30%]">
+    <div className="flex  items-center relative left-[20%]">
       <input
         autoFocus={true}
-        className="border rounded-xl pl-2 py-1 relative  max-w-[50%] text-pink-300 bg-black focus:outline-none"
+        className="border rounded-xl pl-2 py-1 relative  max-w-[60%] text-pink-300 bg-black focus:outline-none"
         placeholder="search"
         value={searchInput}
         onChange={(e) => {
@@ -25,8 +25,8 @@ const Search = ({
         }}
       />
       <X
-        size="20"
-        className="opacity-60"
+        size="16"
+        className="opacity-60 cursor-pointer"
         onClick={() => {
           setShowSearch(false);
           setSearchInput("");

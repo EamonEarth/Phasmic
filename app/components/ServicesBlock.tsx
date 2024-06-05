@@ -212,7 +212,7 @@ const ServicesBlock = ({ className }: ServicesBlockProps) => {
         <p
           id="desktop services"
           className={cn(
-            "hidden relative md:flex flex-col col-span-2 font-bold h-[90%] border-gray-400 border-dashed border-b-[1px] md:border-b-0 w-[50%] md:w-auto md:border-r-[1px] p-2 justify-center items-center uppercase tracking-widest",
+            "hidden relative md:flex flex-col col-span-2 font-bold h-[90%] border-gray-400 border-dashed border-b-[1px] md:border-b-0 w-[50%] md:w-auto md:border-r-[1px] p-2 justify-center text-center items-center uppercase tracking-widest",
             ubuntu.className
           )}
         >
@@ -244,7 +244,9 @@ const ServicesBlock = ({ className }: ServicesBlockProps) => {
                 "border-2 border-black border-l-0 border-r-0"
                 // showTooltip == content.title && "py-2"
               )}
-              onMouseOver={() => {
+              onMouseEnter={() => {
+                console.log("moused");
+                console.log(showTooltip);
                 clearTooltipTimeout();
                 setTimeout(() => setShowTooltip(content.title), 500);
               }}
@@ -260,7 +262,7 @@ const ServicesBlock = ({ className }: ServicesBlockProps) => {
                     "background-color 0.5s ease-in-out, background-image 0.5s ease-in-out",
                 }}
                 className={cn(
-                  "tracking-widest text-start pl-4 flex gap-x-4 bg-white items-center w-full border border-l-0 text-[14px] h-[30px] md:text-[18px] pseudo-gradient",
+                  "tracking-widest text-start pl-4 flex gap-x-4 bg-white items-center w-full border border-l-0 text-[14px] h-[30px] md:text-[16px] pseudo-gradient",
                   highlightedCategories[index] === 1 && "highlighted"
                   // "bg-gradient-to-r from-transparent  to-green-800 from-35% glitch"
                 )}
@@ -294,7 +296,7 @@ const ServicesBlock = ({ className }: ServicesBlockProps) => {
 
           <p
             style={{ WebkitTextStroke: "0.5px black" }}
-            className=" absolute md:top-0 bottom-4 right-1 w-full text-end pr-4 pt-3"
+            className=" absolute md:top-0 bottom-2 right-1- w-full text-end pr-4 pt-3 pointer-events-none"
           >
             Tell us your needs and we&apos;ll find the right team for you!
           </p>

@@ -27,14 +27,14 @@ const ServicesTooltip = ({
         WebkitTextStroke: "1px black",
       }}
       className={cn(
-        "relative top-0 w-auto h-auto flex flex-col z-50  text-white-- opacity-[95%] overflow-hidden bg-white",
+        "relative top-0  h-auto flex flex-col z-50  text-white-- opacity-[95%] overflow-hidden bg-white",
         // ubuntu.className,
         expandTooltip ? "max-h-[300px]" : "max-h-[0px] bg-white"
       )}
     >
       <ul
         className={cn(
-          "relative flex  justify-center md:justify-norma- md:-inset-x-[10%] gap-x-12 py-4 gap-y-2",
+          "relative flex  justify-center md:-inset-x-[10%]- gap-x-12 py-4 gap-y-2  ",
           ulClassNames
         )}
       >
