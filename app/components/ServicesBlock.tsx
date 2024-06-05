@@ -294,7 +294,7 @@ const ServicesBlock = ({ className }: ServicesBlockProps) => {
 
           <p
             style={{ WebkitTextStroke: "0.5px black" }}
-            className=" absolute top-0 right-1 w-full text-end pr-4 pt-3"
+            className=" absolute md:top-0 bottom-4 right-1 w-full text-end pr-4 pt-3"
           >
             Tell us your needs and we&apos;ll find the right team for you!
           </p>
