@@ -11,8 +11,6 @@ import {
   milonga,
   sancreek,
   eagleLake,
-  // imbue,
-  // texturina,
   piedra,
   almendraDisplay,
   bigelowRules,
@@ -35,8 +33,6 @@ const fontArray = [
   milonga.className,
   sancreek.className,
   // eagleLake.className, //offfend
-  // // imbue.className,
-  // // texturina.className,
   piedra.className,
   almendraDisplay.className,
   bigelowRules.className,
@@ -93,23 +89,13 @@ const Header = ({ className }: HeaderProps) => {
 
   const textStyle = {
     fontSize: `${textSize}px`,
-    // lineHeight: `${textSize}px`,
   };
-
-  // const textStyle = {
-  //   fontSize: `${textSize}px`,
-  //   lineHeight: `${textSize}px`, // Ensure consistent line height
-  //   height: `${textSize}px`, // Fixed height based on textSize
-  //   width: `${textSize}px`, // Fixed width based on textSize
-  //   // display: "inline-block",
-  //   overflow: "hidden", // Ensure overflow doesn't affect layout
-  // };
 
   return (
     <div
       id="Home"
       className={cn(
-        "w-full max-w-[100%] min-h-[350px] h-auto  border-black bg-black overflow-hidden",
+        "w-full max-w-[100%] h-auto  border-black bg-black overflow-hidden",
         className
       )}
     >
