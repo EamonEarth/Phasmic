@@ -100,7 +100,7 @@ const ContactForm = React.forwardRef<HTMLDivElement, ContactFormProps>(
               "grid gap-2 text-white text-sm  relative bg-black p-6 rounded-se-[150px] rounded-es-[100px] ",
               bungeeHairline.className
             )}
-            style={{ WebkitTextStroke: "1px white" }}
+            style={{ WebkitTextStroke: "0.5px white" }}
           >
             <X
               className="cursor-pointer absolute top-[50px] right-[50px] text-white"
@@ -112,7 +112,7 @@ const ContactForm = React.forwardRef<HTMLDivElement, ContactFormProps>(
                 id="name"
                 name="name"
                 className={cn(
-                  "border md:border-2 border-black rounded rounded-se-full p-2 pl-3 bg-purple-500/90 w-[60%] md:w-[33%] focus:outline-purple-500 focus:border-none",
+                  "border md:border-2 border-black rounded rounded-se-full p-2 pl-3 bg-purple-500/50 w-[60%] md:w-[33%] focus:outline-purple-500 focus:border-none",
                   formData.name && "bg-purple-500/20"
                 )}
                 type="text"
@@ -125,8 +125,8 @@ const ContactForm = React.forwardRef<HTMLDivElement, ContactFormProps>(
               <input
                 name="email"
                 className={cn(
-                  "border md:border-2 border-black rounded rounded-se-full  p-2 pl-3 w-[80%]  bg-purple-500/90 md:w-[66%] focus:outline-purple-500 focus:border-none",
-                  formData.email && "bg-purple-500/40"
+                  "border md:border-2 border-black rounded rounded-se-full  p-2 pl-3 w-[80%]  bg-purple-500/50 md:w-[66%] focus:outline-purple-500 focus:border-none",
+                  formData.email && "bg-purple-500/30"
                 )}
                 type="text"
                 onChange={handleChange}
@@ -138,8 +138,8 @@ const ContactForm = React.forwardRef<HTMLDivElement, ContactFormProps>(
               <input
                 name="subject"
                 className={cn(
-                  "border md:border-2 border-black rounded rounded-se-full p-2 pl-3  bg-purple-500/90 focus:outline-purple-500 focus:border-none",
-                  formData.subject && "bg-purple-500/50"
+                  "border md:border-2 border-black rounded rounded-se-full p-2 pl-3  bg-purple-500/50 focus:outline-purple-500 focus:border-none",
+                  formData.subject && "bg-purple-500/40"
                 )}
                 type="text"
                 onChange={handleChange}
@@ -153,8 +153,8 @@ const ContactForm = React.forwardRef<HTMLDivElement, ContactFormProps>(
                 // className="border md:border-2 border-black rounded-3xl p-2 pb-24 pl-3  resize-none"
 
                 className={cn(
-                  " border md:border-2 border-black  rounded-b-3xl w-full p-2 pb-24 pl-3  bg-purple-500/90 resize-none focus:outline-purple-500 focus:border-none",
-                  formData.message && "bg-purple-500/70"
+                  " border md:border-2 border-black  rounded-b-3xl w-full p-2 pb-24 pl-3  bg-purple-500/50 resize-none focus:outline-purple-500 focus:border-none",
+                  formData.message && "bg-purple-500/50"
                 )}
                 onChange={handleChange}
                 value={formData.message}
@@ -165,13 +165,13 @@ const ContactForm = React.forwardRef<HTMLDivElement, ContactFormProps>(
               <Button
                 type="reset"
                 onClick={handleClear}
-                className="w-[35%] border md:border-2 border-black  rounded-es-xl -mt-auto bg-purple-500/90 hover:bg-purple-400"
+                className="w-[35%] border md:border-2 border-black  rounded-es-xl -mt-auto bg-purple-500/50 hover:bg-purple-500/70"
               >
                 <Trash2 className="w-4 h-4 flex justify-right text-white" />
               </Button>
 
               <Button
-                className="w-full border md:border-2 border-black rounded-ee-[100px] -mt-auto bg-purple-500/90 hover:bg-purple-400"
+                className="w-full border md:border-2 border-black rounded-ee-[100px] -mt-auto bg-purple-500/50 hover:bg-purple-500/70"
                 type="submit"
               >
                 <SendHorizonal className="w-4 h-4 flex justify-right text-white" />

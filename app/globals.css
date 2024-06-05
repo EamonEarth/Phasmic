@@ -10,6 +10,18 @@
 }  
 
 
+
+input::spelling-error, textarea::spelling-error {
+  text-decoration: underline;
+  text-decoration-color: white; /* Change the color of the underline dots */
+  text-decoration-style: wavy; /* Change the underline style */
+  opacity: 1; /* Change the opacity */
+  -webkit-text-stroke: 0.5px white;
+
+}
+
+
+
 .letter {
   width: 40px; /* Adjust based on the widest character in your font set */
   text-align: center;

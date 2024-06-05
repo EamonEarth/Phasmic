@@ -31,12 +31,12 @@ const fontArray = [
   cutiveMono.className,
   shrikhand.className,
   grenzeGotisch.className,
-  lakkiReddy.className,
+  // // lakkiReddy.className, // FONT OFFENDER
   milonga.className,
   sancreek.className,
-  eagleLake.className,
-  // imbue.className,
-  // texturina.className,
+  // eagleLake.className, //offfend
+  // // imbue.className,
+  // // texturina.className,
   piedra.className,
   almendraDisplay.className,
   bigelowRules.className,
@@ -93,26 +93,36 @@ const Header = ({ className }: HeaderProps) => {
 
   const textStyle = {
     fontSize: `${textSize}px`,
+    // lineHeight: `${textSize}px`,
   };
+
+  // const textStyle = {
+  //   fontSize: `${textSize}px`,
+  //   lineHeight: `${textSize}px`, // Ensure consistent line height
+  //   height: `${textSize}px`, // Fixed height based on textSize
+  //   width: `${textSize}px`, // Fixed width based on textSize
+  //   // display: "inline-block",
+  //   overflow: "hidden", // Ensure overflow doesn't affect layout
+  // };
 
   return (
     <div
       id="Home"
       className={cn(
-        "w-full max-w-[100%] h-auto  border-black bg-black overflow-hidden",
+        "w-full max-w-[100%] min-h-[350px] h-auto  border-black bg-black overflow-hidden",
         className
       )}
     >
-      <div className="flex flex-col w-full  items-center justify-center text-white bg-green-200- min-h-[305px]">
+      <div className="flex flex-col w-full  items-center justify-center text-white bg-green-200- ">
         <p
           style={textStyle}
-          className="font-bold items-center- justify-center flex gap-x-2 h-[300px] overflow-hidden"
+          className="font-bold items-center- justify-center flex gap-x-2 overflow-hidden"
         >
           {letters.map((className, index) => (
             <span
               key={index}
               className={cn(
-                "letter flex items-center justify-center h-[300px] text-center lg:px-16 md:px-12 px-2 bg-orange-200-",
+                "letter flex h-[300px] items-center justify-center min-h-[300px] max-h-[300px] text-center lg:px-16 md:px-12 px-2 bg-orange-200-",
                 className
               )}
             >

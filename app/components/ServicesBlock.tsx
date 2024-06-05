@@ -146,22 +146,20 @@ const ServicesBlock = ({ className }: ServicesBlockProps) => {
   };
 
   const highlightMatch = (contentTitle: string, searchInput: string) => {
-    if (!searchInput) return contentTitle; // Return original if no search input
+    if (!searchInput) return contentTitle;
 
     const lowerCaseContent = contentTitle.toLowerCase();
     const lowerCaseSearchInput = searchInput.toLowerCase();
     const matchStart = lowerCaseContent.indexOf(lowerCaseSearchInput);
-    if (matchStart === -1) return contentTitle; // Return original if no match
+    if (matchStart === -1) return contentTitle;
 
     const matchEnd = matchStart + searchInput.length;
 
-    // Splitting the title into three parts: before, match, after
     const beforeMatch = contentTitle.substring(0, matchStart);
     const matchText = contentTitle.substring(matchStart, matchEnd);
     const afterMatch = contentTitle.substring(matchEnd);
     console.count("highlighted");
 
-    // Return a combination of elements, highlighting the match
     return (
       <>
         {beforeMatch}
@@ -284,41 +282,16 @@ const ServicesBlock = ({ className }: ServicesBlockProps) => {
                   className="flex justify-around gap-x-4 whitespace-nowrap py-2 border-t"
                   style={{ WebkitTextStroke: "1px black" }}
                 >
-                  {"   "}
                   {content.content.map((entry) => (
                     <span className="px-2" key={entry}>
-                      {highlightMatch(entry, searchInput)}
+                      • {highlightMatch(entry, searchInput)}
                     </span>
                   ))}
                 </p>
               </HorizontalTicker>
             </span>
           ))}
-          {/* {contentArray.map((content, index) => (
-            <span
-              style={{ transition: "padding 0.8s" }}
-              className={cn(
-                "border-2 border-black border-l-0 border-r-0",
-                showTooltip == content.title && "py-2"
-              )}
-              onMouseOver={() => {
-                clearTooltipTimeout();
-                setTimeout(() => setShowTooltip(content.title), 500);
-              }}
-              key={content.title}
-            >
-              <ScrollingTicker
-                Icon={content.icon}
-                scrollingContentType={content.scrollSpeed}
-                title={content.title}
-                content={content.content}
-                showTooltip={showTooltip}
-                setShowTooltip={setShowTooltip}
-                highlighted={highlightedCategories[index] === 1}
-                searchInput={searchInput}
-              />
-            </span>
-          ))} */}
+
           <p
             style={{ WebkitTextStroke: "0.5px black" }}
             className=" absolute bottom-2 right-2 w-full text-end pr-4 pt-3"
