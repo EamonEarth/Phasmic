@@ -19,12 +19,6 @@ export const NAV_ITEMS = [
     Icon: Home,
     tip: "Home",
   },
-  // {
-  //   name: "Projects",
-  //   link: "/Projects",
-  //   Icon: FileClock,
-  //   tip: "Past Projects",
-  // },
   {
     name: "Contact",
     link: "/Contact",
@@ -95,7 +89,6 @@ const Sidebar = () => {
                       "absolute left-36 rounded-r-full pr-3 bg-black text-white text-start z-50 opacity-50",
                       ubuntu.className
                     )}
-                    // style={{ filter: "invert(1)", mixBlendMode: "difference" }}
                   >
                     {item.tip}
                   </div>

@@ -95,7 +95,7 @@ const Header = ({ className }: HeaderProps) => {
     <div
       id="Home"
       className={cn(
-        "w-full max-w-[100%] h-auto  border-black bg-black overflow-hidden",
+        "w-full max-w-[100%] h-auto  border-black bg-black overflow-hidden py-16",
         className
       )}
     >
@@ -108,7 +108,7 @@ const Header = ({ className }: HeaderProps) => {
             <span
               key={index}
               className={cn(
-                "letter flex h-[300px] items-center justify-center min-h-[300px] max-h-[300px] text-center lg:px-16 md:px-12 px-2 bg-orange-200-",
+                "letter flex h-[300px] items-center justify-center min-h-[300px] max-h-[300px] text-center lg:px-16 mx-4 md:px-12 px-2 bg-orange-200-",
                 className
               )}
             >

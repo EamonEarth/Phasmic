@@ -24,7 +24,6 @@ interface ProjectsProps {
 }
 
 const Projects = ({ id }: ProjectsProps) => {
-  const imageUrl = "/phasmic.png";
   return (
     <div id={id} className="h-full w-full flex flex-col gap-y-4 relative pt-8">
       <h2

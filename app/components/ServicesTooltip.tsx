@@ -28,7 +28,6 @@ const ServicesTooltip = ({
       }}
       className={cn(
         "relative top-0  h-auto flex flex-col z-50  text-white-- opacity-[95%] overflow-hidden bg-white",
-        // ubuntu.className,
         expandTooltip ? "max-h-[300px]" : "max-h-[0px] bg-white"
       )}
     >

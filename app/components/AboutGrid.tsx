@@ -29,11 +29,11 @@ const AboutGrid = ({ className }: AboutGridProps) => {
           wordSpacing: "6px",
         }}
       >
-        <p className="">
+        <p>
           - Your point of access to a wealth of the best creative talent.
         </p>
-        <p className="">- Event/Production gurus with years of experience.</p>
-        <p className="">- Good people to work with!</p>
+        <p>- Event/Production gurus with years of experience.</p>
+        <p>- Good people to work with!</p>
       </div>
     </div>
   );

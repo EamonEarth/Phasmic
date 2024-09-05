@@ -19,15 +19,12 @@ const Services = ({ className }: ServicesProps) => {
           ubuntu.className
         )}
       >
-        {/* <p>We</p>
-        <p>Can</p> */}
         <p className={dancing.className}>Services</p>
         <p className={slack.className}>Offered</p>
       </div>
       <div
         className={cn(
           "col-span-6  ml-2 lg:ml-12 md:text-left text-left text-xs md:text-sm tracking-wide",
-          // annie.className
           bungeeHairline.className
         )}
         style={{
